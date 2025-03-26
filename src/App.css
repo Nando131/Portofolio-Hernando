@@ -1,85 +1,79 @@
-*,
-html {
-  margin: 0;
-  padding: 0;
-}
+/* App.css */
 
-
-.body {
-  display: flex;
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .container1 {
-  overflow: hidden;
-  background-color: whitesmoke;
+    padding: 20px;
 }
 
-.Judul {
-  font-size: 30px;
-  font-family: 'Times New Roman', Times, serif;
-  margin-top: 30px;
+/* Gradient text style */
+.nama {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Example gradient colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Image styles */
+.Gambar {
+    width: 100%; /* Make image responsive */
+    max-width: 150px; /* Limit max width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Button styles */
+.buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    position: relative;
+    margin-top: 20px;
+}
+
+.buttons button {
+    margin: 5px 0; /* Add vertical margin */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Section styles */
+.AboutMe, .Skills, .History, .Contact {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .container1 {
+        padding: 10px; /* Reduce padding on small screens */
+    }
+
+    .nama {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically */
+    }
 }
 
 .DivGambarKenalan {
-  display: flex;
-}
-
-.TextKenalan {
-  margin-top: 10px;
-}
-
-.Gambar{
-  width: 350px;
-  margin-top: -200px;
-  margin-left: 50px;
-  height: auto;
-}
-
-.nama {
-  color: red;
-}
-
-.posisi {
-  color: blue;
-}
-
-.KotakKenalan {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  height: 100px;
-  background-color: black;
-  overflow: hidden;
-}
-
-
-.TextKenalan {
-  display: flex;
-  padding-right: 10px;
-  font-family: 'Times New Roman', Times, serif;
-  text-align: center;
-  margin-top: 50px;
-  padding-left: 40px;
-  font-size: 25px;
-  flex-direction: column;
-}
-
-.AboutMe {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  padding-left: 40px ;
-  font-size: 20px;
-  font-style: italic;
-  font-family: 'Times New Roman', Times, serif;
-  border: 1px solid black;
-  border-radius: 50px;
-}
-
-.AboutMe {
-  transition: transform 0.3s ease;
-}
-
-.AboutMe:hover {
-  transform: scale(1.02);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
