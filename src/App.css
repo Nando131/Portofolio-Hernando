@@ -1,0 +1,85 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+
+.body {
+  display: flex;
+}
+
+.container1 {
+  overflow: hidden;
+  background-color: whitesmoke;
+}
+
+.Judul {
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 30px;
+}
+
+.DivGambarKenalan {
+  display: flex;
+}
+
+.TextKenalan {
+  margin-top: 10px;
+}
+
+.Gambar{
+  width: 350px;
+  margin-top: -200px;
+  margin-left: 50px;
+  height: auto;
+}
+
+.nama {
+  color: red;
+}
+
+.posisi {
+  color: blue;
+}
+
+.KotakKenalan {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100px;
+  background-color: black;
+  overflow: hidden;
+}
+
+
+.TextKenalan {
+  display: flex;
+  padding-right: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  margin-top: 50px;
+  padding-left: 40px;
+  font-size: 25px;
+  flex-direction: column;
+}
+
+.AboutMe {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  padding-left: 40px ;
+  font-size: 20px;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+.AboutMe {
+  transition: transform 0.3s ease;
+}
+
+.AboutMe:hover {
+  transform: scale(1.02);
+}
