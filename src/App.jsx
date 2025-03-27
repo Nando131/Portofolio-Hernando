@@ -1,8 +1,11 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import './App.css';
 import Muka from './assets/Muka.png';
-import { useState } from 'react';
+import htmlImage from './assets/html.png';
+import cssImage from './assets/css.png';
+import viteImage from './assets/Vite.png';
+import downloadImage from './assets/download.png';
 
 function App() {
   const textRef = useRef(null);
@@ -10,12 +13,14 @@ function App() {
   const [skillsVisible, setSkillsVisible] = useState(false);
   const [historyVisible, setHistoryVisible] = useState(false);
   const [contactVisible, setContactVisible] = useState(false);
+  const [projectListVisible, setProjectListVisible] = useState(false);
 
   const handleHomeClick = () => {
     setAboutMeVisible(false);
     setSkillsVisible(false);
     setHistoryVisible(false);
     setContactVisible(false);
+    setProjectListVisible(false);
   };
 
   const handleAboutMeClick = () => {
@@ -23,6 +28,7 @@ function App() {
     setSkillsVisible(false);
     setHistoryVisible(false);
     setContactVisible(false);
+    setProjectListVisible(false);
   };
 
   const handleSkillsClick = () => {
@@ -30,6 +36,7 @@ function App() {
     setSkillsVisible(true);
     setHistoryVisible(false);
     setContactVisible(false);
+    setProjectListVisible(false);
   };
 
   const handleHistoryClick = () => {
@@ -37,6 +44,7 @@ function App() {
     setSkillsVisible(false);
     setHistoryVisible(true);
     setContactVisible(false);
+    setProjectListVisible(false);
   };
 
   const handleContactClick = () => {
@@ -44,6 +52,15 @@ function App() {
     setSkillsVisible(false);
     setHistoryVisible(false);
     setContactVisible(true);
+    setProjectListVisible(false);
+  };
+
+  const handleProjectListClick = () => {
+    setAboutMeVisible(false);
+    setSkillsVisible(false);
+    setHistoryVisible(false);
+    setContactVisible(false);
+    setProjectListVisible(true);
   };
 
   useEffect(() => {
@@ -54,6 +71,70 @@ function App() {
       ease: 'power3.out',
     });
   }, []);
+
+  useEffect(() => {
+    gsap.from('.container1', {
+      y: -50,
+      opacity: 1,
+      duration: 1,
+      ease: 'power3.out',
+    });
+  }, []);
+
+  useEffect(() => {
+    if (aboutMeVisible) {
+      gsap.from('.AboutMe', {
+        y: -50,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+      });
+    }
+  }, [aboutMeVisible]);
+
+  useEffect(() => {
+    if (skillsVisible) {
+      gsap.from('.Skills', {
+        y: -50,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+      });
+    }
+  }, [skillsVisible]);
+
+  useEffect(() => {
+    if (historyVisible) {
+      gsap.from('.History', {
+        y: -50,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+      });
+    }
+  }, [historyVisible]);
+
+  useEffect(() => {
+    if (contactVisible) {
+      gsap.from('.Contact', {
+        y: -50,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+      });
+    }
+  }, [contactVisible]);
+
+  useEffect(() => {
+    if (projectListVisible) {
+      gsap.from('.ProjectList', {
+        y: -50,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+      });
+    }
+  }, [projectListVisible]);
 
   return (
     <>
@@ -85,6 +166,7 @@ function App() {
             <button onClick={handleSkillsClick}>Skills</button>
             <button onClick={handleHistoryClick}>History</button>
             <button onClick={handleContactClick}>Contact Me</button>
+            <button onClick={handleProjectListClick}>Project List</button>
           </div>
 
           <div className='AboutMe' style={{ display: aboutMeVisible ? 'block' : 'none' }}>
@@ -93,19 +175,44 @@ function App() {
           </div>
           <div className='Skills' style={{ display: skillsVisible ? 'block' : 'none' }}>
             <h1>Skills</h1>
-            <p>My Skill is I can do HTML, CSS so it's styling the HTML. I can do some React.</p>
+            <div className="skills-images">
+              <div className="skill-item">
+                <img src={htmlImage} alt="HTML" />
+                <h2>HTML</h2>
+              </div>
+              <div className="skill-item">
+                <img src={cssImage} alt="CSS" />
+                <h2>CSS</h2>
+              </div>
+              <div className="skill-item">
+                <img src={viteImage} alt="React" />
+                <h2>React</h2>
+              </div>
+              <div className="skill-item">
+                <img src={downloadImage} alt="GSAP" />
+                <h2>GSAP</h2>
+              </div>
+            </div>
           </div>
           <div className='History' style={{ display: historyVisible ? 'block' : 'none' }}>
             <h1>History of Education</h1>
             <p>I started in elementary school from 2016 until July 2022 at Sekolah Amitayus. From July 2022 until 2024, I was in SMP at Sekolah Budi Agung. Now, in 2024, I am studying at SMK Triratna in Class 10 majoring in RPL.</p>
           </div>
+
           <div className='Contact' style={{ display: contactVisible ? 'block' : 'none' }}>
             <h1>Contact Me</h1>
             <p>Email: Nandoher00@gmail.com</p>
+            <p>Phone: (+62) 812 8093 4898</p>
+          </div>
+
+          <div className='ProjectList' style={{ display: projectListVisible ? 'block' : 'none' }}>
+            <h1>My Project</h1>
+            <p>Test</p>
+          </div>
+
           </div>
         </div>
-      </div>
-    </>
+      </>
   );
 }
 

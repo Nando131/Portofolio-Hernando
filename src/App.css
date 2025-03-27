@@ -1,79 +1,97 @@
-/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-/* General styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container1 {
-    padding: 20px;
+  padding: 20px;
+  margin-top: 50px;
 }
 
-/* Gradient text style */
 .nama {
-    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Example gradient colors */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Image styles */
 .Gambar {
-    width: 100%; /* Make image responsive */
-    max-width: 150px; /* Limit max width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Button styles */
+.Gambar:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.skills-images {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.skill-item {
+  text-align: center;
+}
+
+.skill-item img {
+  transition: transform 0.3s ease;
+}
+
+.skill-item img.clicked {
+  transform: scale(1.1);
+}
+
 .buttons {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically on small screens */
-    position: relative;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 20px;
 }
 
 .buttons button {
-    margin: 5px 0; /* Add vertical margin */
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  margin: 5px 0;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .buttons button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
-/* Section styles */
-.AboutMe, .Skills, .History, .Contact {
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
+.AboutMe, .Skills, .History, .Contact, .Project {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 600px) {
-    .container1 {
-        padding: 10px; /* Reduce padding on small screens */
-    }
+  .container1 {
+      padding: 10px;
+  }
 
-    .nama {
-        font-size: 1.5em; /* Adjust font size for smaller screens */
-    }
+  .nama {
+      font-size: 1.5em;
+  }
 
-    .buttons {
-        flex-direction: column; /* Stack buttons vertically */
-    }
+  .buttons {
+      flex-direction: column;
+  }
 }
 
 .DivGambarKenalan {
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
